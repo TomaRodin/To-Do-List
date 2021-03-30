@@ -1,0 +1,81 @@
+<html>
+<body>
+
+<style>
+    .h4 {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+    h1 {
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+    .myInput {
+    width: 25%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    margin-left: 50px;
+    }
+    .btn {
+	background-color:#2dabf9;
+	border-radius:3px;
+	border:0px solid #0b0e07;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:16px;
+	padding:12px 23px;
+	text-decoration:none;
+	
+}
+.btn:hover {
+	background-color:#0688fa;
+}
+
+
+
+
+</style>
+
+<img src="Images/logo.jpg" height="100" width="auto">
+
+<br>
+
+<input class="myInput" id="myInput">
+
+<button keypress="enter" class="btn" id="btn" onclick="myfunction()">Add</button>
+
+<div class="div1"  id="div1"></div>
+
+
+<script>
+    function myfunction() {
+        const inputvalue = document.getElementById("myInput").value
+        if (inputvalue == '') {
+            return true
+        }
+        else {
+        const newDiv = document.createElement("h4");
+        const div = document.createElement("div");
+        newDiv.style.background = "#F1F3F4"
+        newDiv.style.fontSize = 'x-large'
+        newDiv.style.width = '35%'
+        newDiv.style.marginLeft = '50px'
+        newDiv.style.fontFamily = "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif"
+        newDiv.innerText = inputvalue
+        newDiv.onclick = function () {
+            this.parentElement.removeChild(this);
+        };
+        const currentDiv = document.getElementById("div1");
+        document.body.insertBefore(newDiv, currentDiv);
+    }
+    }
+</script>
+
+
+
+
+
+
+</body>
+</html>
